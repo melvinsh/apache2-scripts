@@ -54,7 +54,6 @@ chmod -R 755 /srv/$1
 
 # Write config
 echo $vhost > /etc/apache2/sites-available/$1_$2.conf
-
 sed -i 's/USER/'$1'/g' /etc/apache2/sites-available/$1_$2.conf
 sed -i 's/DOMAIN/'$2'/g' /etc/apache2/sites-available/$1_$2.conf
 
