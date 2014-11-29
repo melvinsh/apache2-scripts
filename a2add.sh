@@ -8,6 +8,12 @@ vhost='
 </VirtualHost>
 '
 
+if [ $# -le 1 ]
+then
+  echo 'Usage: a2add USER DOMAIN (without www)'
+  exit
+fi
+
 if [ "$(id -u)" != "0" ]; then
   echo "Sorry, you are not root."
   exit 1
