@@ -6,6 +6,11 @@ then
   exit
 fi 
 
+if [ "$(id -u)" != "0" ]; then
+  echo "Sorry, you are not root."
+  exit
+fi
+
 vhost='
 <VirtualHost *:80>\n
     ServerName DOMAIN\n
@@ -16,11 +21,7 @@ vhost='
 </VirtualHost>
 '
 
-if [ "$(id -u)" != "0" ]; then
-  echo "Sorry, you are not root."
-  exit
-fi
-
+# Confirmation message
 echo
 echo Adding VirtualHost...
 echo
