@@ -18,7 +18,7 @@ vhost='
 
 if [ "$(id -u)" != "0" ]; then
   echo "Sorry, you are not root."
-  exit 1
+  exit
 fi
 
 echo
