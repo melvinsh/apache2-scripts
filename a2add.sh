@@ -1,3 +1,11 @@
+#!/bin/bash
+
+if [ $# -le 1 ] 
+then 
+  echo 'Usage: a2add USER DOMAIN (without www)'
+  exit
+fi 
+
 vhost='
 <VirtualHost *:80>\n
     ServerName DOMAIN\n
@@ -8,19 +16,27 @@ vhost='
 </VirtualHost>
 '
 
-if [ $# -le 1 ]
-then
-  echo 'Usage: a2add USER DOMAIN (without www)'
-  exit
-fi
-
 if [ "$(id -u)" != "0" ]; then
   echo "Sorry, you are not root."
   exit 1
 fi
 
+echo
+echo Adding VirtualHost...
+echo
 echo User: $1
 echo Domain: $2
+echo
+echo Writing:
+echo /srv/$1/$2/public_html
+echo /srv/$1/$2/public_html/index.php
+echo /srv/$1/$2/logs
+echo /srv/$1/$2/logs/access.log
+echo /srv/$1/$2/logs/error.log
+echo /etc/apache2/sites-available/$1_$2.conf
+echo
+
+read -p 'Press [Enter] to continue...'
 
 # Create directories
 mkdir -p /srv/$1/$2/public_html
