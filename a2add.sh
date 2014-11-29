@@ -41,4 +41,4 @@ echo $vhost > /etc/apache2/sites-available/$1_$2.conf
 sed -i 's/USER/'$1'/g' /etc/apache2/sites-available/$1_$2.conf
 sed -i 's/DOMAIN/'$2'/g' /etc/apache2/sites-available/$1_$2.conf
 
-echo Done! You can enable the site with a2ensite.
+echo Done! You can enable the site with: sudo a2ensite $1_$2.conf.
