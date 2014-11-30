@@ -45,6 +45,7 @@ mkdir -p /srv/$1/$2/logs
 touch /srv/$1/$2/logs/error.log
 touch /srv/$1/$2/logs/access.log
 
+touch /srv/$1/$2/public_html/favicon.ico
 echo $2 > /srv/$1/$2/public_html/index.php
 
 # Set rights
