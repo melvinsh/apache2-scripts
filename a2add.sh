@@ -1,7 +1,6 @@
 #!/bin/bash
 
-if [ $# -le 1 ] 
-then 
+if [ $# -le 1 ]; then 
   echo 'Usage: a2add USER DOMAIN (without www)'
   exit
 fi 
