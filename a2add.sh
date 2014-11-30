@@ -30,6 +30,7 @@ echo
 echo Writing:
 echo /srv/$1/$2/public_html
 echo /srv/$1/$2/public_html/index.php
+echo /srv/$1/$2/public_html/favicon.ico \(empty\)
 echo /srv/$1/$2/logs
 echo /srv/$1/$2/logs/access.log
 echo /srv/$1/$2/logs/error.log
